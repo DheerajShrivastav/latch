@@ -9,7 +9,10 @@ const io = new Server(httpServer, {
     credentials: false,
   },
 })
-
+// Simple GET request handler for the root path
+app.get('/', (req, res) => {
+  res.send('Welcome to the Game Server!');
+});
 const players = {}
 
 io.on('connection', (socket) => {
